@@ -4,10 +4,12 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.2",
+    "algoliasearch": "^3.32.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-instantsearch-dom": "^5.4.0",
     "react_ujs": "^2.4.4"
   },
   "devDependencies": {
