@@ -1,11 +1,11 @@
 import React from "react";
-// import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 
-// const searchClient = algoliasearch(
-//   "latency",
-//   "6be0576ff61c053d5f9a3225e2a90f76"
-// );
+import {
+  InstantSearch,
+  SearchBox,
+  Hits,
+  SortBy
+} from "react-instantsearch-dom";
 
 class PostSearch extends React.Component {
   render() {
@@ -17,6 +17,27 @@ class PostSearch extends React.Component {
         resultsState={JSON.parse(this.props.result)}
       >
         <SearchBox />
+        <SortBy
+          defaultRefinement="Post_updated_at_desc"
+          items={[
+            {
+              value: "Post_updated_at_desc",
+              label: "Last udpated"
+            },
+            {
+              value: "Post_created_at_desc",
+              label: "Last created"
+            },
+            {
+              value: "Post_updated_at_asc",
+              label: "First udpated"
+            },
+            {
+              value: "Post_created_at_asc",
+              label: "First created"
+            }
+          ]}
+        />
         <Hits />
       </InstantSearch>
     );

@@ -8,6 +8,15 @@
 
 require 'ffaker'
 
-50.times do 
-  Post.create(title: FFaker::Book.title, body: FFaker::Lorem.sentence)
+Post.destroy_all
+Category.destroy_all
+
+cats = ["Novel", "Fan fiction", "SciFi", "Romance", "Thriller", "Essay"]
+cats.each do |name|
+  category = Category.find_or_create_by(name: name)
+  
+  10.times do 
+    Post.create(title: FFaker::Book.title, body: FFaker::Lorem.sentence, category: category)
+  end
+
 end
