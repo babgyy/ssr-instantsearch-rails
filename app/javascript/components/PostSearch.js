@@ -4,7 +4,9 @@ import {
   InstantSearch,
   SearchBox,
   Hits,
-  SortBy
+  SortBy,
+  Panel,
+  RefinementList
 } from "react-instantsearch-dom";
 
 class PostSearch extends React.Component {
@@ -14,8 +16,9 @@ class PostSearch extends React.Component {
         appId="0S51WQJHQ7"
         apiKey="dde8a3eb27c99e55dede6d2c8ab0c6dd"
         indexName="Post"
-        resultsState={JSON.parse(this.props.result)}
+        // resultsState={JSON.parse(this.props.result)} // REF1 
       >
+        <RefinementList attribute="category" />
         <SearchBox />
         <SortBy
           defaultRefinement="Post_updated_at_desc"
