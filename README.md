@@ -7,6 +7,8 @@ This repo is a demo case of what I would like to accomplish :
 - with a pre-rendering of the results server-side (for SEO reasons)
 - using a Ruby on Rails server
 
+Showcase for issue https://github.com/algolia/react-instantsearch/issues/2191
+
 # How to setup 
 
 For general instructions on how to setup Ruby 2.5.3, Bundler and Rails [go there](https://gorails.com/setup/). 
@@ -28,12 +30,14 @@ bundle exec rails s
 
 Then visit [localhost:3000](http://localhost:3000)
 
-Now uncomment `REF1` in `app/javascript/components/PostSearch.js` and see the rendering failing
+Now uncomment `REF1` in `app/javascript/components/PostSearch.js` and see the rendering fail
 
 # Argument
 
 `react-instantsearch` NPM package allows me to build a client-side search UI (file `app/javascript/components/PostSearch.js`)
+
 `react-rails` gem allows to easily to server-side rendering. See file `app/views/welcome/index.html.erb` or search `REF2` in the project
+
 `algoliasearch-rails` gem allows to do search Algolia from the server too. See `REF3`
 
 SEO-wise, I need to prerender the search engine with a list of results coming from a combination of search parameters. This repo shows how to do all of this, but fails to feed InstantSearch component with raw JSON response from the algolia ruby client.
